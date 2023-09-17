@@ -1,5 +1,1 @@
-fastapi
-pydantic
-uvicorn
-redis
 debugpy
