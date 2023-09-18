@@ -1,4 +1,4 @@
 
-def main():  # pragma: no cover
+def main(filename:str):  # pragma: no cover
     
-    print("This will do something")
+    print(f"This will do something for {filename}")
