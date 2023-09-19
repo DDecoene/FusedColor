@@ -2,7 +2,8 @@ import cv2
 import numpy as np
 import os
 
-def make_stencils(input_image_path:str):
+
+def make_stencils(input_image_path: str, output_directory: str):
     # Load the input image
     image = cv2.imread(input_image_path)
 
@@ -10,7 +11,6 @@ def make_stencils(input_image_path:str):
         print("Could not open or read the image.")
     else:
         # Ensure the output directory exists
-        output_directory = 'stencils'
         os.makedirs(output_directory, exist_ok=True)
 
         # Define the RGB values for your paint colors
@@ -36,10 +36,12 @@ def make_stencils(input_image_path:str):
             layer_mask = np.ones_like(image, dtype=np.float32) * opacity
 
             # Create a filename for the stencil
-            stencil_filename = os.path.join(output_directory, f'stencil_{i + 1}.png')
+            stencil_filename = os.path.join(
+                output_directory, f'stencil_{i + 1}.png')
 
             # Apply the spray can color to the stencil
-            stencil_image = np.ones_like(image, dtype=np.uint8) * np.array(color)
+            stencil_image = np.ones_like(
+                image, dtype=np.uint8) * np.array(color)
             painted_image = (stencil_image * layer_mask).astype(np.uint8)
 
             # Save the stencil as an image with the spray can color and opacity
