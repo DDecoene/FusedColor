@@ -10,7 +10,7 @@
             "request": "launch",
             "module": "fusedcolor",
             "justMyCode": true,
-            "args": ["img/the-mechanism-of-418198_1280.jpg","stencils"]
+            "args": ["showLines","img/calibration_control_calibrated.png","stencils"]
         }
     ]
 }
